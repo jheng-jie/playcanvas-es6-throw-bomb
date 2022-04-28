@@ -19,7 +19,7 @@ export type Store = {
 export default defineStore("main", {
   state: () => {
     return {
-      show: true,
+      show: false,
       max: 120,
       attribute: {
         hp: 0,

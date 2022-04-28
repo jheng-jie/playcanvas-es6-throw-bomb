@@ -31,7 +31,6 @@ import Property from "./component/Property.vue"
 // store
 import useStore, { Attribute } from "./store"
 const store = useStore()
-window.store = store
 
 /**
  * @desc 屬性更新
@@ -63,10 +62,11 @@ const onChange = function (key: keyof Attribute, value: number) {
  * @desc 確認
  */
 const onConfirm = function () {
-  if (!window?.onSkillCallback) return
-  window.onSkillCallback()
+  window?.onSkillCallback()
 }
-onMounted(onConfirm)
+
+// init
+onMounted(() => window?.onSkillInitialize(store))
 </script>
 
 <style lang="less">
