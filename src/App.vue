@@ -25,6 +25,7 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from "vue"
 import Property from "./component/Property.vue"
 
 // store
@@ -65,6 +66,7 @@ const onConfirm = function () {
   if (!window?.onSkillCallback) return
   window.onSkillCallback()
 }
+onMounted(onConfirm)
 </script>
 
 <style lang="less">
