@@ -16,11 +16,17 @@ export type Store = {
   max: number
 }
 
+export enum SPACE_SKILL {
+  ROLL = 0x00,
+  DEFENCE = 0x01,
+}
+
 export default defineStore("main", {
   state: () => {
     return {
       show: false,
-      max: 120,
+      max: 150,
+      space: SPACE_SKILL.ROLL,
       attribute: {
         hp: 0,
         mp: 0,

@@ -9,6 +9,6 @@ declare module "*.vue" {
 
 // window 新增属性
 interface Window {
-  onSkillCallback: () => void
+  onSkillCallback: (store: any) => void
   onSkillInitialize: (store: any) => void
 }

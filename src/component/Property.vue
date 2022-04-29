@@ -4,7 +4,7 @@
       <button @mousedown.prevent.stop="onClickUpdateValue(-props.graduation)" class="btn">
         <Icon icon="chevron-left" />
       </button>
-      <div class="flex-1 text-center text-lg">
+      <div class="flex-1 text-center text-sm">
         {{ props.label || "" }}
         ( {{ modelValue }}% )
       </div>
@@ -42,7 +42,7 @@ watch(modelValue, () => {
 })
 
 // 數值
-const value = ref<number>(0)
+const value = ref<number>(modelValue.value)
 
 // 百分比
 const percent = computed(() => `${((value.value / 100) * 100).toFixed(2)}%`)
@@ -130,7 +130,7 @@ const onProgressClick = function (event: MouseEvent) {
 
 <style lang="less" scoped>
 .btn {
-  @apply px-2 ~"py-0.5" bg-gray-600 rounded text-sm bg-yellow-600 hover:bg-yellow-800 transition-colors font-bold;
+  @apply px-2 ~"py-0.5" bg-gray-600 rounded scale-75 bg-yellow-600 hover:bg-yellow-800 transition-colors font-bold;
 }
 .progress {
   @apply w-full bg-gray-200 rounded-full ~"h-2.5" cursor-pointer;
