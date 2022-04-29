@@ -14,6 +14,7 @@ export type Store = {
   graduation: Attribute
   show: boolean
   max: number
+  space: number
 }
 
 export enum SPACE_SKILL {
