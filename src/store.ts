@@ -12,7 +12,9 @@ export type Attribute = {
 export type Store = {
   attribute: Attribute
   graduation: Attribute
-  show: boolean
+  skill: boolean
+  auth: boolean
+  loading: boolean
   max: number
   space: number
 }
@@ -25,8 +27,10 @@ export enum SPACE_SKILL {
 export default defineStore("main", {
   state: () => {
     return {
-      show: false,
+      skill: false,
+      auth: true,
       max: 150,
+      loading: false,
       space: SPACE_SKILL.ROLL,
       attribute: {
         hp: 0,
@@ -50,7 +54,7 @@ export default defineStore("main", {
     /**
      * @desc 技能總消耗
      */
-    skill(): number {
+    skillCount(): number {
       return Object.keys(this.attribute)
         .map((key: string) => Math.ceil(this.attribute[key as keyof Attribute] / this.graduation[key as keyof Attribute]))
         .reduce((res, val) => res + val, 0)

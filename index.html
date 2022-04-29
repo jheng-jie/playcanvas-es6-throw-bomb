@@ -10,11 +10,17 @@
     <div style="background-image: url('./bg.png')" class="bg-cover bg-no-repeat bg-center fixed top-0 left-0 bottom-0 right-0"></div>
     <script type="module" src="/src/main.ts"></script>
     <script>
-      window.onSkillInitialize = function (store) {
-        store.show = true
+      window.onAuthInitialize = function (store, name, photon) {
+        console.log(name, photon)
+        // store.show = true
+        store.loading = true
+        setTimeout(() => {
+          store.loading = false
+          store.skill = true
+        }, 3000)
       }
       window.onSkillCallback = function (store) {
-        store.show = false
+        store.skill = false
       }
     </script>
   </body>

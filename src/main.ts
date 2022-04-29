@@ -18,6 +18,12 @@ import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons
 library.add(faChevronLeft)
 library.add(faChevronRight)
 
+app.directive("focus", {
+  mounted(el) {
+    el.focus()
+  },
+})
+
 // create vue app
 app.component("Icon", FontAwesomeIcon)
 app.use(createPinia())
