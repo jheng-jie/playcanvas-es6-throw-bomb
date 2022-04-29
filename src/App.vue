@@ -3,7 +3,7 @@
   <transition name="popup">
     <div v-if="store.skill" @click.prevent.stop="false" class="fixed left-0 top-0 w-full h-full flex justify-center items-center">
       <div id="popup-skill" class="flex flex-col justify-center">
-        <h1 class="text-xl font-bold text-center mb-2 text-yellow-500 shrink-0">點數 ( {{ store.max - store.skill }} )</h1>
+        <h1 class="text-xl font-bold text-center mb-2 text-yellow-500 shrink-0">點數 ( {{ store.max - store.skillCount }} )</h1>
         <div class="flex-1 overflow-y-auto">
           <Property @change="onChange('hp', $event)" v-model="store.attribute.hp" :graduation="store.graduation.hp" label="生命值" class="mb-1.5" />
           <Property @change="onChange('mp', $event)" v-model="store.attribute.mp" :graduation="store.graduation.mp" label="魔力恢復" class="mb-1.5" />
