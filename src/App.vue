@@ -34,6 +34,7 @@
   <!--skill floating btn-->
   <div @click.prevent.stop="store.skill = !store.skill" class="skill-icon cursor-pointer w-12 h-12 fixed bottom-2 left-2 z-40 select-none">
     <img src="./asset/skills.png" alt="https://www.flaticon.com/authors/freepik" class="hover:scale-110 transition-all" />
+    <img v-show="store.max - store.skillCount > 0" src="./asset/skills.png" alt="https://www.flaticon.com/authors/freepik" class="hover:scale-110 absolute left-0 top-0 transition-all animate-ping" />
     <a class="fixed left-16 bottom-2 break-normal text-white bg-black px-2 hidden text-xs" href="https://www.flaticon.com/free-icons/worker" title="worker icons">
       Worker icons created by Freepik - Flaticon
     </a>
